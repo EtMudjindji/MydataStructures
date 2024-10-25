@@ -1,26 +1,18 @@
 #ifndef NODE_H
 #define NODE_H
 
-
-class Node{
-
+class Node {
     public:
         int data;
         Node* next = nullptr;
 
-        Node(int value){
+        Node(int value) {
             this->data = value;
-            //this->next = nullptr;
         }
 
-        int printValue()
-        {
+        int printValue() {
             return this->data;
         }
 };
-
-
-
-
 
 #endif

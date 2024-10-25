@@ -1,32 +1,16 @@
-#include<iostream>
-
+#include <iostream>
 using namespace std;
-
 #include "Stack.cpp"
 
-int main()
-{
+int main() {
     MyStack stack;
-
-    if(stack.isEmpty() == true)
-    {
-        cout << "Empty " << endl;
-    }
-
-    else{
-        cout << "Stack not empty\n";
-    }
-    
-
-    stack.push(5);
-    //stack.pop(4);
     stack.push(3);
     stack.push(2);
+    stack.push(10);
 
-    stack.printValues();
 
+    cout << stack.pop();
 
+  //  cout << stack.peek(0); // This should print 2, the top of the stack
     return 0;
-
-    // simple stack file. 
 }

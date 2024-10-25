@@ -47,23 +47,25 @@ class MyStack {
         }
 
         void printValues() {
-            int i = 0;
             Node* current = Top;
             while (current != nullptr) {
-                
-                    cout << current->data << endl;
-                    
-                
-                i++;
+                cout << current->data << endl;
                 current = current->next;
             }
         }
+
+        int peek(int userInput) {
+            int i = 0; 
+            Node* currentNode = Top; 
+            while (currentNode != nullptr) {
+                if (i == userInput) {
+                    return currentNode->data;
+                }
+                currentNode = currentNode->next;
+                i++; 
+            }
+            return -1; // Indicate that the position was not found
+        }
 };
 
-
-
-
-#endif 
-
-
-
+#endif
