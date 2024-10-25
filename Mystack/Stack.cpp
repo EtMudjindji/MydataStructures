@@ -66,6 +66,28 @@ class MyStack {
             }
             return -1; // Indicate that the position was not found
         }
+
+        void changeValueAt(int position,int value)
+        {
+            Node* current = this->Top;
+            
+            int i = 0 ;
+            if(isEmpty())
+            {
+               logic_error("sorry stack is empty"); 
+            }
+
+            while(current != nullptr)
+            {
+
+                if(i == position)
+                {
+                    current->data = value;
+                }
+                current = current->next;
+                ++i;
+            }
+        }
 };
 
 #endif
