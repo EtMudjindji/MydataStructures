@@ -1,9 +1,18 @@
 #include <iostream>
 using namespace std;
 #include "Stack.cpp"
+#include<String>
 
 int main() {
-    MyStack stack;
+    MyStack<string> stack;
+
+    stack.push("Etienne");
+    stack.push("Jacques");
+    stack.push("Nathan");
+
+    
+
+    stack.printValues();
     /*
                     stack.push(3);
                 stack.push(2);
@@ -14,7 +23,7 @@ int main() {
                 cout << stack.pop();
 
             //  cout << stack.peek(0); // This should print 2, the top of the stack
-    */
+    
 
    for(int i = 0 ; i < 25; ++i)
    {
@@ -34,13 +43,14 @@ int main() {
    cout << value << endl;
 
    //cout << stack.stackSize() << endl;
-
-   */
-
-  cout << stack.peek(2) << endl;
+   cout << stack.peek(2) << endl;
 
   stack.changeValueAt(2,100);
   cout << stack.peek(2);
+
+   */
+
+  
     
     return 0;
 }

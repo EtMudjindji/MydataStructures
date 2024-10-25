@@ -6,16 +6,19 @@
 
 using namespace std;
 
+template <typename T>
+
+
 class MyStack {
     public:
-        Node* Top = nullptr;
+        Node<T>* Top = nullptr;
 
         bool isEmpty() {
             return Top == nullptr;
         }
 
-        void push(int value) {
-            Node* newnode = new Node(value);
+        void push(T value) {
+            Node<T>* newnode = new Node(value);
             if (isEmpty()) {
                 Top = newnode;
             } else {
@@ -26,7 +29,7 @@ class MyStack {
 
         int stackSize() {
             int i = 0;
-            Node* current = Top;
+            Node<T>* current = Top;
             while (current != nullptr) {
                 i++;
                 current = current->next;
@@ -39,24 +42,24 @@ class MyStack {
                 // Add your own error handling here if needed
                 return -1; // or some indication that the stack is empty
             }
-            int value = Top->data;
-            Node* temp = Top;
+            T value = Top->data;
+            Node<T>* temp = Top;
             Top = temp->next;
             delete temp;
             return value;
         }
 
         void printValues() {
-            Node* current = Top;
+            Node<T>* current = Top;
             while (current != nullptr) {
                 cout << current->data << endl;
                 current = current->next;
             }
         }
 
-        int peek(int userInput) {
+        T peek(int userInput) {
             int i = 0; 
-            Node* currentNode = Top; 
+            Node<T>* currentNode = Top; 
             while (currentNode != nullptr) {
                 if (i == userInput) {
                     return currentNode->data;
@@ -64,12 +67,12 @@ class MyStack {
                 currentNode = currentNode->next;
                 i++; 
             }
-            return -1; // Indicate that the position was not found
+             return -1;
         }
 
-        void changeValueAt(int position,int value)
+        void changeValueAt(int position,T value)
         {
-            Node* current = this->Top;
+            Node<T>* current = this->Top;
             
             int i = 0 ;
             if(isEmpty())

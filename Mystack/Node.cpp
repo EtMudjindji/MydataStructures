@@ -1,16 +1,18 @@
 #ifndef NODE_H
 #define NODE_H
 
+template <typename T>
+
 class Node {
     public:
-        int data;
-        Node* next = nullptr;
+        T data;
+        Node<T>* next = nullptr;
 
-        Node(int value) {
+        Node(T value) {
             this->data = value;
         }
 
-        int printValue() {
+        T  printValue() {
             return this->data;
         }
 };
