@@ -91,6 +91,23 @@ class MyStack {
                 ++i;
             }
         }
+
+        bool Find(T value)
+        {
+            Node<T>* current = this->Top;
+
+            while(current != nullptr)
+            {
+                if(current->data == value)
+                {
+                    return true;
+                }
+
+                current = current->next;
+            }
+
+            return false;
+        }
 };
 
 #endif
