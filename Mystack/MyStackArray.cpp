@@ -45,6 +45,12 @@ class MyArrayStack {
             Number[++top] = data;
         }
 
+    // Peek Function return the value at that position
+        void peek(int position)
+        {
+            return Number[i];
+        }
+
         void printStack() {
             if (IsEmpty()) {
                 cout << "Stack is Empty\n";
