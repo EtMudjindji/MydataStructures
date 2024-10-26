@@ -3,11 +3,12 @@
 
 using namespace std;
 #include <iostream>
+template<typename T>
 
 class MyArrayStack {
     public:
         int size;
-        int* Number;
+        T* Number;
         int top;
 
         MyArrayStack(int initialSize = 5) : size(initialSize), top(-1) {
@@ -38,7 +39,7 @@ class MyArrayStack {
             cout << "Stack resized to " << newSize << " elements.\n";
         }
 
-        void push(int data) {
+        void push(T data) {
             if (isFull()) {
                 resize();
             }
@@ -46,7 +47,7 @@ class MyArrayStack {
         }
 
     // Peek Function return the value at that position
-        int peek(int position)
+        T peek(int position)
         {
             return Number[position];
         }

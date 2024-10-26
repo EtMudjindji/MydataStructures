@@ -86,7 +86,7 @@ int main() {
     cout << (isValid(s4) ? "True\n" : "False\n");
     */
 
-   MyArrayStack mystack1;
+   MyArrayStack<int> mystack1;
 
    mystack1.push(100);
     mystack1.push(10);
