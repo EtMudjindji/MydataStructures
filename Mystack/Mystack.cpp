@@ -26,9 +26,11 @@ Output: true
 #include <iostream>
 using namespace std;
 #include "Stack.cpp"
+#include "MyStackArray.cpp"
 #include <string>
 #include <vector>
 
+/*
 bool isValid(string s) {
     MyStack<char> Newstack; // Stack to keep track of opening brackets
 
@@ -65,8 +67,12 @@ bool isValid(string s) {
     return Newstack.isEmpty(); // If empty, all brackets are balanced
 }
 
+*/
+
 int main() {
-    // Test cases
+    /*
+    
+     Test cases
     string s1 = "(]";
     cout << (isValid(s1) ? "True\n" : "False\n");
 
@@ -78,6 +84,26 @@ int main() {
 
     string s4 = "([])";
     cout << (isValid(s4) ? "True\n" : "False\n");
+    */
+
+   MyArrayStack mystack1;
+
+   mystack1.push(100);
+    mystack1.push(10);
+     mystack1.push(50);
+
+if(mystack1.IsEmpty() == true)
+{
+    cout << "Stack is Empty\n";
+}
+  
+else{
+
+    cout << "Stack is not Empty\n";
+}
+//cout << mystack1.Number[0];
+
+mystack1.printStack();
 
     return 0;
 }
