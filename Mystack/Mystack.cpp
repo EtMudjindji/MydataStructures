@@ -92,6 +92,8 @@ int main() {
     mystack1.push(10);
      mystack1.push(50);
 
+cout << mystack1.peek(0);
+
 if(mystack1.IsEmpty() == true)
 {
     cout << "Stack is Empty\n";

@@ -46,9 +46,9 @@ class MyArrayStack {
         }
 
     // Peek Function return the value at that position
-        void peek(int position)
+        int peek(int position)
         {
-            return Number[i];
+            return Number[position];
         }
 
         void printStack() {
