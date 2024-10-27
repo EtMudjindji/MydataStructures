@@ -91,8 +91,9 @@ int main() {
    mystack1.push(100);
     mystack1.push(10);
      mystack1.push(50);
+     mystack1.push(5);
 
-cout << mystack1.peek(0);
+//cout << mystack1.peek(0);
 
 if(mystack1.IsEmpty() == true)
 {
@@ -105,7 +106,25 @@ else{
 }
 //cout << mystack1.Number[0];
 
+cout << "Before pop" << endl;
+cout << "--------------------------------------\n";
+
+cout << mystack1.stackSize() << endl;
+
 mystack1.printStack();
+cout << endl;
+
+
+cout << "After Pop\n";
+
+mystack1.pop();
+cout << endl;
+
+cout << mystack1.stackSize() << endl;
+
+mystack1.printStack();
+
+
 
     return 0;
 }

@@ -52,6 +52,23 @@ class MyArrayStack {
             return Number[position];
         }
 
+        int stackSize()
+        {
+            if(!IsEmpty())
+            {
+                return top += 1;
+            }
+
+            else {
+                return -1;
+            }
+        }
+        T pop()
+        {
+            return Number[top+1];
+            top -= 1;
+        }
+
         void printStack() {
             if (IsEmpty()) {
                 cout << "Stack is Empty\n";
