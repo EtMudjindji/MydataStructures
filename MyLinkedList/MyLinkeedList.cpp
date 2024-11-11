@@ -1,13 +1,16 @@
 #include<iostream>
 
-using  namespace  std;
+using namespace std;
+#include "Node.cpp"
 
 int main()
 {
+    //LinkedList<int> mylist;
+    Node node1(5);
 
-    LinkedList<int> mylist;
+    cout << node1.data << endl;
 
-    return 0 ;
+    return 0;
 }
 
-// in this file, i will imppement my own personal linked list. 
+// In this file, I will implement my own personal linked list.
