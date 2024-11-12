@@ -1,14 +1,23 @@
 #include<iostream>
 
 using namespace std;
-#include "Node.cpp"
+#include "LinkedList.cpp"
 
 int main()
 {
-    //LinkedList<int> mylist;
-    Node node1(5);
+    LinkedList mylist;
 
-    cout << node1.data << endl;
+    mylist.Append(5);
+    mylist.Append(20);
+
+    mylist.print();
+    mylist.Remove(5);
+
+    mylist.print();
+   // Node node1(5);
+    
+
+    //cout << node1.data << endl;
 
     return 0;
 }
