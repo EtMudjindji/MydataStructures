@@ -9,15 +9,15 @@ int main()
 
     mylist.Append(5);
     mylist.Append(20);
+    mylist.Append(100);
 
-    mylist.print();
     mylist.Remove(5);
 
-    mylist.print();
-   // Node node1(5);
-    
+    //mylist.print();
 
-    //cout << node1.data << endl;
+    cout << mylist.find(5);
+
+    
 
     return 0;
 }

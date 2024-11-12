@@ -2,96 +2,120 @@
 #define LINKEDLIST_CPP
 
 #include "Node.cpp"
-
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 class LinkedList
 {
-    public:
+public:
+    Node* head = nullptr;
+    Node* tail = nullptr;
+    int count = 0;
 
-        Node* head = nullptr;
-        Node* tail = nullptr;
-        int count = 0;
+    bool isEmpty()
+    {
+        return head == nullptr;
+    }
 
-        bool isEmpty()
+    int size()
+    {
+        return count;
+    }
+
+    void Append(int data)
+    {
+        Node* newnode = new Node(data);
+
+        if (isEmpty())
         {
-            return head == nullptr;
+            head = newnode;
+            tail = newnode;
+        }
+        else
+        {
+            tail->Next = newnode;
+            tail = newnode;
+        }
+        count += 1;
+    }
+
+    void Remove(int data)
+    {
+        if (isEmpty())
+        {
+            cout << "List Empty\n";
+            return;
         }
 
-        int size()
+        // If the node to be removed is the head
+        if (head->data == data)
         {
-            return count;
+            Node* temp = head;
+            head = head->Next;
+            delete temp;
+            count -= 1;
+
+            // If the list becomes empty after removal
+            if (head == nullptr)
+                tail = nullptr;
+
+            return;
         }
 
-        void Append(int data)
+        Node* previous = head;
+        Node* current = head->Next;
+
+        while (current != nullptr)
         {
-
-            // first i create a new node , and pass the value that the user is inputing into the constructor.
-
-            Node* newnode = new Node(data);
-
-            // case 1 if the list is Empty.
-             // assign the head and tail to that value
-
-            if(isEmpty())
+            if (current->data == data)
             {
-                head = newnode;
-                tail = newnode;
-                count+= 1;
-
-            }
-
-            // else if it is not empty. then we assign that value to tail's next . and set it to tail. 
-
-            else{
-
-                tail->Next = newnode;
-                tail = newnode;
-                count += 1;
-            }
-
-
-
-        }
-
-        void Remove(int data)
-        {
-            Node* current = head;
-
-            while(current->data != data || current == nullptr){
-                Node* temp = current->Next; // value we looking for
-                Node* found = temp->Next;
-
-                if(current->Next->data == data)
+                previous->Next = current->Next;
+                // If the node to be removed is the tail
+                if (current == tail)
                 {
-                    
-                    current->Next = temp;
-                    delete temp;
-
+                    tail = previous;
                 }
-
-                current = current->Next;
+                delete current;
+                count -= 1;
+                return;
             }
 
+            previous = current;
+            current = current->Next;
         }
+    }
 
-        void print()
+    void print()
+    {
+        Node* current = head;
+
+        while (current != nullptr)
         {
-            Node* current = this->head;
-
-            while(current != nullptr)
-            {
-                cout << current->data << endl;
-                current = current->Next;
-                
-            }
-
-
+            cout << current->data << endl;
+            current = current->Next;
         }
+
+    }
+
+    int  find(int value){
+
+        Node* current = head;
+
+        while(current != nullptr)
+        {
+            if(current->data == value)
+            {
+                cout << current->data;
+            }
+            
+            current = current->Next;
+        }
+
+        return -1;
+
+        
+    }
+    
 };
-
-
-
 
 #endif
