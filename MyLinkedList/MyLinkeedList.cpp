@@ -7,15 +7,16 @@ int main()
 {
     LinkedList mylist;
 
-    mylist.Append(5);
     mylist.Append(20);
+    mylist.Append(5);
     mylist.Append(100);
 
-    mylist.Remove(5);
+    //mylist.Remove(5);
+    mylist.sortList();
 
-    //mylist.print();
+    mylist.print();
 
-    cout << mylist.find(5);
+    //cout << mylist.find(5);
 
     
 

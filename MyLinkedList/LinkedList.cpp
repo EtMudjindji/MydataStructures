@@ -115,6 +115,32 @@ public:
 
         
     }
+
+    void sortList() {
+    Node* current = head;
+    Node* next = nullptr;
+    int tempData;
+
+    // Check if the list is empty or has only one element
+    if (head == nullptr || head->Next == nullptr) {
+        return;
+    }
+
+    while (current != nullptr) {
+        next = current->Next;
+        while (next != nullptr) {
+            if (current->data > next->data) {
+                // Swap data
+                tempData = current->data;
+                current->data = next->data;
+                next->data = tempData;
+            }
+            next = next->Next;
+        }
+        current = current->Next;
+    }
+}
+
     
 };
 
